@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setTitle("Календарь");
+    }
 
+    override fun onResume() {
+        super.onResume()
         calendarCreate()
     }
 
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         dateView.setTextSize(TEXT_SIZE)
 
         val tableLayout = findViewById<TableLayout>(R.id.tab) as TableLayout
+        tableLayout.removeAllViews()
 
         //Дни недели
         val tableRow1 = TableRow(this)
